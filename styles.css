@@ -1,56 +1,20 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
-}
+/* CSS Variables for easy theming */
+:root {
+    --primary-color: #667eea;
+    --primary-dark: #764ba2;
+    --secondary-color: #f093fb;
+    --accent-color: #4facfe;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --text-light: #a0aec0;
+    --background: #ffffff;
+    --background-light: #f7fafc;
+    --background-card: #ffffff;
+    --border-light: #e2e8f0;
+    --border-medium: #cbd5e0;
+    --success-color: #48bb78;
+    --warning-color: #ed8936;
+    --error-color: #f56565;
+    --shadow-sm: 0 1px 3px 0 rgba;
 
-.nav {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.hero {
-    background-color: #667eea;
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.search-section {
-    padding: 20px;
-    text-align: center;
-}
-
-.search-section input {
-    padding: 10px;
-    width: 300px;
-}
-
-.search-section button {
-    padding: 10px;
-}
-
-.results-section {
-    padding: 20px;
-    text-align: center;
-}
-
-.result-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
