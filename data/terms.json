@@ -1,0 +1,74 @@
+{
+    "smart contract": {
+        "definition": "A smart contract is like a digital vending machine. Just as you put money in a vending machine and automatically get a snack, a smart contract automatically executes an agreement when certain conditions are met. On Stacks, these are written in Clarity language and run on top of Bitcoin's security.",
+        "difficulty": "Beginner",
+        "examples": ["Automated payments", "Digital escrow", "Token distribution"],
+        "relatedTerms": ["Clarity Language", "DeFi", "dApp"]
+    },
+    "proof of transfer": {
+        "definition": "Proof of Transfer (PoX) is Stacks' unique way of securing the network that's different from Bitcoin's Proof of Work. Instead of wasting energy like traditional mining, Stacks miners 'transfer' Bitcoin to STX holders who are 'Stacking' their tokens.",
+        "difficulty": "Intermediate",
+        "examples": ["Stacking rewards", "Miner commitments", "Network security"],
+        "relatedTerms": ["Stacking", "STX Token", "Bitcoin Finality"]
+    },
+    "clarity language": {
+        "definition": "Clarity is Stacks' smart contract programming language, designed to be safer and more predictable than other blockchain languages like Solidity. It is 'decidable' - meaning you can predict what a contract will do before running it.",
+        "difficulty": "Intermediate",
+        "examples": ["Predictable execution", "No runtime surprises", "Human-readable code"],
+        "relatedTerms": ["Smart Contract", "Stacks Blockchain", "DeFi"]
+    },
+    "stx token": {
+        "definition": "STX is the native cryptocurrency of the Stacks network - think of it as the fuel that powers everything on Stacks. You use STX to pay for transaction fees, participate in smart contracts, and 'Stack' your tokens to earn Bitcoin rewards.",
+        "difficulty": "Beginner",
+        "examples": ["Transaction fees", "Stacking rewards", "DeFi participation"],
+        "relatedTerms": ["Stacking", "Proof of Transfer", "Bitcoin"]
+    },
+    "bitcoin finality": {
+        "definition": "Bitcoin finality means your transaction is permanently recorded and cannot be reversed - it has the highest level of security in crypto. On Stacks, transactions inherit this security from Bitcoin.",
+        "difficulty": "Advanced",
+        "examples": ["Immutable transactions", "Security inheritance", "Permanent records"],
+        "relatedTerms": ["Stacks Blockchain", "Bitcoin", "Security"]
+    },
+    "stacking": {
+        "definition": "Stacking is like earning interest on your STX tokens, but instead of getting more STX, you earn Bitcoin! You lock up your STX tokens for a certain period, and miners pay you Bitcoin for the right to mine Stacks blocks.",
+        "difficulty": "Beginner",
+        "examples": ["Bitcoin rewards", "Token locking", "Network participation"],
+        "relatedTerms": ["STX Token", "Proof of Transfer", "Bitcoin"]
+    },
+    "defi": {
+        "definition": "DeFi (Decentralized Finance) is like traditional banking, but without the banks. Instead of going to a bank for loans, savings, or trading, you interact directly with smart contracts on the blockchain.",
+        "difficulty": "Beginner",
+        "examples": ["Decentralized exchanges", "Lending protocols", "Yield farming"],
+        "relatedTerms": ["Smart Contract", "dApp", "Bitcoin DeFi"]
+    },
+    "dapp": {
+        "definition": "A dApp (decentralized application) is like a regular app, but instead of running on company servers, it runs on the blockchain. This means no single entity controls it - it's owned and operated by its users.",
+        "difficulty": "Beginner",
+        "examples": ["Decentralized social media", "NFT marketplaces", "Gaming platforms"],
+        "relatedTerms": ["Smart Contract", "DeFi", "Web3"]
+    },
+    "nft": {
+        "definition": "An NFT (Non-Fungible Token) is like a digital certificate of ownership for unique items. While anyone can copy a digital image, only one person can own the official NFT version.",
+        "difficulty": "Beginner",
+        "examples": ["Digital art", "Gaming collectibles", "Membership passes"],
+        "relatedTerms": ["Smart Contract", "Digital Ownership", "Collectibles"]
+    },
+    "web3": {
+        "definition": "Web3 is the vision of a new internet where users own their data and digital assets instead of big tech companies. It lets you truly own your digital stuff through blockchain technology.",
+        "difficulty": "Intermediate",
+        "examples": ["Decentralized social media", "User -owned data", "Censorship resistance"],
+        "relatedTerms": ["dApp", "Blockchain", "Decentralization"]
+    },
+    "bitcoin": {
+        "definition": "Bitcoin is the first and most secure cryptocurrency - often called 'digital gold.' It's a peer-to-peer electronic cash system that allows you to send money anywhere in the world without banks or governments.",
+        "difficulty": "Beginner",
+        "examples": ["Digital payments", "Store of value", "Decentralized money"],
+        "relatedTerms": ["Cryptocurrency", "Blockchain", "Stacks"]
+    },
+    "blockchain": {
+        "definition": "A blockchain is like a digital ledger that's copied across thousands of computers worldwide. Every transaction is recorded in 'blocks' that are chained together cryptographically.",
+        "difficulty": "Beginner",
+        "examples": ["Transaction records", "Distributed ledger", "Immutable history"],
+        "relatedTerms": ["Bitcoin", "Cryptocurrency", "Decentralization"]
+    }
+}

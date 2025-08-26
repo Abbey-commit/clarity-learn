@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered explanations for stacks, Bitcoin, crypto terms. Learn blockchain development with simple, beginner-friendly explanations">
+    <meta name="keyword" content="Stack, Bitcoin, Crypto, Blockchain, Education, AI, Learning">
+    <meta name="author" content="ClarityLearn">
+
+    <title>ClarityLearn - AI-Powered Stacks & Crypto Education</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="logo">🧠</span>
+                <span class="brand-text">ClarityLearn</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="https://github.com/Abbey-commit/clarity-learn.git" class="nav-link" target="_blank">Github</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Learn <span class="highlight">Stack & Crypto</span> The Simple Way</h1>
+            <p>get instant, AI-powered explanations for any blockchain term.</p>
+            <div class="hero-stats">
+                <div class="stat"><div class="stat-number">50+</div><div class="stat-label">Terms Explained</div></div>
+                <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Free to use</div></div>
+                <div class="stat"><div class="stat-number">⚡</div><div class="stat-label">Instant Results</div></div>
+            </div>
+        </div>
+    </section> 
+
+        <!-- Main Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <h2>What would you like to understand?</h2>
+            <input type="text" id="searchTerm" placeholder="e.g. Smart Contract...">
+            <button id="searchBtn" onclick="searchTerm">Explain it</button>
+            <div class="loading" id="loading">
+                <div class="loading-text">generating your explanation...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Result Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="result-container", id="resultContainer">
+                <h3 id="resultTitle"></h3>
+                <div id="resultContant"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
