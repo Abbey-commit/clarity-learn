@@ -1,20 +1,89 @@
-/* CSS Variables for easy theming */
-:root {
-    --primary-color: #667eea;
-    --primary-dark: #764ba2;
-    --secondary-color: #f093fb;
-    --accent-color: #4facfe;
-    --text-primary: #2d3748;
-    --text-secondary: #718096;
-    --text-light: #a0aec0;
-    --background: #ffffff;
-    --background-light: #f7fafc;
-    --background-card: #ffffff;
-    --border-light: #e2e8f0;
-    --border-medium: #cbd5e0;
-    --success-color: #48bb78;
-    --warning-color: #ed8936;
-    --error-color: #f56565;
-    --shadow-sm: 0 1px 3px 0 rgba;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
 
+header {
+    background-color: #667eea;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+.hero {
+    padding: 2rem;
+    text-align: center;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.search-section {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#searchTerm {
+    padding: 0.5rem;
+    width: 300px;
+}
+
+#searchBtn {
+    padding: 0.5rem 1rem;
+    background-color: #667eea;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.results-section {
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #ccc;
+    margin: 1rem auto;
+    max-width: 600px;
+    display: none;
+}
+
+.examples-section {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.examples-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.example-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.example-card:hover {
+    background-color: #eaeaea;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #667eea;
+    color: white;
 }

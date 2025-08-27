@@ -4,378 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI-powered explanations for Stacks, Bitcoin, and crypto terms. Learn blockchain development with simple, beginner-friendly explanations.">
-    <meta name="keywords" content="Stacks, Bitcoin, Crypto, Blockchain, Education, AI, Learning">
-    <meta name="author" content="ClarityLearn">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <!-- <meta property="og:url" content="https://github.io/claritylearn/"> -->
-    <meta property="og:title" content="ClarityLearn - AI-Powered Stacks & Crypto Education">
-    <meta property="og:description" content="Get instant, simple explanations for any Stacks or crypto term. Perfect for beginners learning blockchain development.">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <!-- <meta property="twitter:url" content="https://github.io/claritylearn/"> -->
-    <meta property="twitter:title" content="ClarityLearn - AI-Powered Stacks & Crypto Education">
-    <meta property="twitter:description" content="Get instant, simple explanations for any Stacks or crypto term. Perfect for beginners learning blockchain development.">
-    
     <title>ClarityLearn - AI-Powered Stacks & Crypto Education</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="logo">🧠</span>
-                <span class="brand-text">ClarityLearn</span>
-            </div>
-            <div class="nav-links">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#features" class="nav-link">Features</a>
-                <a href="https://github.com/yourusername/claritylearn" class="nav-link" target="_blank">GitHub</a>
-            </div>
-        </div>
-    </nav>
+    <header>
+        <h1>🧠 ClarityLearn</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="https://github.com/yourusername/claritylearn" target="_blank">GitHub</a>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span>🚀 Now Live - Try the MVP!</span>
-                </div>
-                <h1 class="hero-title">
-                    Learn <span class="highlight">Stacks & Crypto</span><br>
-                    The Simple Way
-                </h1>
-                <p class="hero-subtitle">
-                    Get instant, AI-powered explanations for any blockchain term. 
-                    No more confusing jargon - just clear, beginner-friendly learning.
-                </p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Terms Explained</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Free to Use</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">⚡</div>
-                        <div class="stat-label">Instant Results</div>
-                    </div>
-                </div>
+    <main>
+        <section class="hero">
+            <h2>Learn Stacks & Crypto the Simple Way</h2>
+            <p>Get instant, AI-powered explanations for any blockchain term.</p>
+            <div class="stats">
+                <div>50+ Terms Explained</div>
+                <div>100% Free to Use</div>
+                <div>⚡ Instant Results</div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Main Search Section -->
-    <section class="search-section">
-        <div class="container">
-            <div class="search-container">
-                <div class="search-header">
-                    <h2>What would you like to understand?</h2>
-                    <p>Type any Stacks, Bitcoin, or crypto term below</p>
-                </div>
-                
-                <div class="search-box-container">
-                    <div class="search-input-wrapper">
-                        <input type="text" 
-                               class="search-box" 
-                               id="searchTerm" 
-                               placeholder="e.g. Smart Contract, Proof of Transfer, Clarity..."
-                               autocomplete="off"
-                               spellcheck="false">
-                        <button class="search-btn" id="searchBtn" onclick="searchTerm()">
-                            <span class="search-icon">🔍</span>
-                            <span class="search-text">Explain It</span>
-                        </button>
-                    </div>
-                    
-                    <div class="search-suggestions">
-                        <span class="suggestions-label">Popular searches:</span>
-                        <button class="suggestion-tag" onclick="quickSearch('Smart Contract')">Smart Contract</button>
-                        <button class="suggestion-tag" onclick="quickSearch('Stacking')">Stacking</button>
-                        <button class="suggestion-tag" onclick="quickSearch('Clarity')">Clarity</button>
-                        <button class="suggestion-tag" onclick="quickSearch('Bitcoin Finality')">Bitcoin Finality</button>
-                    </div>
-                </div>
-                
-                <div class="loading" id="loading">
-                    <div class="loading-spinner"></div>
-                    <div class="loading-text">Generating your explanation...</div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section class="search-section">
+            <h2>What would you like to understand?</h2>
+            <input type="text" id="searchTerm" placeholder="Type a term...">
+            <button id="searchBtn">🔍 Explain It</button>
+            <div id="loading" style="display:none;">Generating your explanation...</div>
+        </section>
 
-    <!-- Results Section -->
-    <section class="results-section">
-        <div class="container">
-            <div class="result-container" id="resultContainer">
-                <div class="result-header">
-                    <div class="result-icon">💡</div>
-                    <h3 class="result-title" id="resultTitle"></h3>
-                    <div class="result-difficulty" id="resultDifficulty"></div>
-                </div>
-                <div class="result-content" id="resultContent"></div>
-                <div class="result-footer">
-                    <div class="result-actions">
-                        <button class="action-btn" onclick="shareResult()">
-                            <span>📋</span> Copy Link
-                        </button>
-                        <button class="action-btn" onclick="suggestImprovement()">
-                            <span>✨</span> Suggest Better Explanation
-                        </button>
-                    </div>
-                    <div class="result-meta">
-                        <span class="meta-item">✅ Beginner Friendly</span>
-                        <span class="meta-item">🎯 Stacks Focused</span>
-                        <span class="meta-item">🤖 AI Powered</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section class="results-section" id="resultContainer" style="display:none;">
+            <h3 id="resultTitle"></h3>
+            <p id="resultContent"></p>
+            <button onclick="copyLink()">📋 Copy Link</button>
+            <button onclick="suggestImprovement()">✨ Suggest Better Explanation</button>
+        </section>
 
-    <!-- Quick Examples Section -->
-    <section class="examples-section" id="examples">
-        <div class="container">
-            <div class="section-header">
-                <h2>Try These Popular Terms</h2>
-                <p>Click any card to see an instant explanation</p>
-            </div>
+        <section class="examples-section">
+            <h2>Try These Popular Terms</h2>
             <div class="examples-grid">
-                <div class="example-card" onclick="quickSearch('Smart Contract')" data-term="smart-contract">
-                    <div class="card-icon">📋</div>
-                    <h3 class="card-title">Smart Contract</h3>
-                    <p class="card-description">Self-executing contracts with built-in rules</p>
-                    <div class="card-difficulty">Beginner</div>
-                </div>
-                
-                <div class="example-card" onclick="quickSearch('Proof of Transfer')" data-term="proof-of-transfer">
-                    <div class="card-icon">🔗</div>
-                    <h3 class="card-title">Proof of Transfer</h3>
-                    <p class="card-description">Stacks unique consensus mechanism</p>
-                    <div class="card-difficulty">Intermediate</div>
-                </div>
-                
-                <div class="example-card" onclick="quickSearch('Clarity Language')" data-term="clarity-language">
-                    <div class="card-icon">⚡</div>
-                    <h3 class="card-title">Clarity Language</h3>
-                    <p class="card-description">Stacks smart contract programming language</p>
-                    <div class="card-difficulty">Intermediate</div>
-                </div>
-                
-                <div class="example-card" onclick="quickSearch('Stacking')" data-term="stacking">
-                    <div class="card-icon">💰</div>
-                    <h3 class="card-title">Stacking</h3>
-                    <p class="card-description">Earn Bitcoin by locking STX tokens</p>
-                    <div class="card-difficulty">Beginner</div>
-                </div>
-                
-                <div class="example-card" onclick="quickSearch('Bitcoin Finality')" data-term="bitcoin-finality">
-                    <div class="card-icon">🔒</div>
-                    <h3 class="card-title">Bitcoin Finality</h3>
-                    <p class="card-description">Transaction permanence and security</p>
-                    <div class="card-difficulty">Advanced</div>
-                </div>
-                
-                <div class="example-card" onclick="quickSearch('STX Token')" data-term="stx-token">
-                    <div class="card-icon">🪙</div>
-                    <h3 class="card-title">STX Token</h3>
-                    <p class="card-description">Native cryptocurrency of Stacks</p>
-                    <div class="card-difficulty">Beginner</div>
-                </div>
+                <div class="example-card" onclick="quickSearch('Smart Contract')">Smart Contract</div>
+                <div class="example-card" onclick="quickSearch('Proof of Transfer')">Proof of Transfer</div>
+                <div class="example-card" onclick="quickSearch('Clarity Language')">Clarity Language</div>
+                <div class="example-card" onclick="quickSearch('Stacking')">Stacking</div>
+                <div class="example-card" onclick="quickSearch('Bitcoin Finality')">Bitcoin Finality</div>
+                <div class="example-card" onclick="quickSearch('STX Token')">STX Token</div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Features Section -->
-    <section class="features-section" id="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Choose ClarityLearn?</h2>
-                <p>Built by developers, for developers learning blockchain</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>AI-Powered Explanations</h3>
-                    <p>Get clear, contextual explanations generated by advanced AI, tailored for your learning level.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Stacks Specialized</h3>
-                    <p>Deep focus on Stacks ecosystem, Clarity language, and Bitcoin integration concepts.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Instant Results</h3>
-                    <p>No waiting, no complicated research. Get explanations in seconds, not hours.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Works Everywhere</h3>
-                    <p>Responsive design that works perfectly on desktop, mobile, and tablet devices.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🆓</div>
-                    <h3>Completely Free</h3>
-                    <p>Core features are always free. We believe education should be accessible to everyone.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Always Improving</h3>
-                    <p>Regular updates with new terms, better explanations, and community-driven improvements.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <footer>
+            <p>© 2025 ClarityLearn. Built with ❤️ for the Stacks community.</p>
+        </footer>
+    </main>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Built from Real Experience</h2>
-                    <p class="about-lead">
-                        ClarityLearn was born from frustration. While taking the Stacks Primer course, 
-                        I constantly encountered confusing terminology that made learning difficult.
-                    </p>
-                    <p>
-                        I found that using AI assistants to break down concepts worked perfectly - 
-                        but this solution should be available to everyone, integrated right into 
-                        their learning experience.
-                    </p>
-                    <p>
-                        That's why ClarityLearn exists: to make blockchain education accessible, 
-                        instant, and enjoyable for developers at every level.
-                    </p>
-                    <div class="about-stats">
-                        <div class="about-stat">
-                            <div class="stat-number">5 Days</div>
-                            <div class="stat-text">From idea to MVP</div>
-                        </div>
-                        <div class="about-stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-text">Open source</div>
-                        </div>
-                        <div class="about-stat">
-                            <div class="stat-number">∞</div>
-                            <div class="stat-text">Potential to help</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4>Day 1: Problem Identified</h4>
-                                <p>Struggled with crypto terminology during Stacks course</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4>Day 2-3: Solution Discovery</h4>
-                                <p>Found AI explanations worked perfectly for learning</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4>Day 4: Idea Formation</h4>
-                                <p>Decided to build this solution for everyone</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item active">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4>Day 5: ClarityLearn Born</h4>
-                                <p>MVP launched and ready to help the community</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Start Learning?</h2>
-                <p>Join hundreds of developers who are learning blockchain the easy way</p>
-                <div class="cta-buttons">
-                    <button class="cta-btn primary" onclick="document.getElementById('searchTerm').focus()">
-                        🚀 Start Learning Now
-                    </button>
-                    <a href="https://github.com/abbey-commit/claritylearn" class="cta-btn secondary" target="_blank">
-                        ⭐ Star on GitHub
-                    </a>
-                </div>
-                <div class="cta-note">
-                    <small>100% free • No signup required • Open source</small>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <span class="logo">🧠</span>
-                        <span class="brand-text">ClarityLearn</span>
-                    </div>
-                    <p class="footer-description">
-                        Making blockchain education accessible to everyone, one explanation at a time.
-                    </p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Product</h4>
-                        <a href="#examples">Try Examples</a>
-                        <a href="#features">Features</a>
-                        <a href="#about">About</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Community</h4>
-                        <a href="https://github.com/abbey-commit/claritylearn" target="_blank">GitHub</a>
-                        <a href="https://discord.gg/stacks" target="_blank">Discord</a>
-                        <a href="#" onclick="suggestImprovement()">Feedback</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Resources</h4>
-                        <a href="https://docs.stacks.co" target="_blank">Stacks Docs</a>
-                        <a href="https://docs.hiro.so" target="_blank">Hiro Docs</a>
-                        <a href="docs/CONTRIBUTING.md" target="_blank">Contribute</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    <p>&copy; 2025 ClarityLearn. Built with ❤️ for the Stacks community.</p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://github.com/yourusername/claritylearn" target="_blank" class="social-link">
-                        GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -11,7 +11,6 @@ class ClarityLearn {
         this.searchBtn = document.getElementById('searchBtn');
         this.searchInput = document.getElementById('searchTerm');
 
-        // Bind the searchTerm method to the search button click
         this.searchBtn.addEventListener('click', () => this.searchTerm());
     }
 
@@ -28,34 +27,29 @@ class ClarityLearn {
     }
 
     searchTerm() {
-        const term = this.searchInput.value.trim(); // Corrected to access value
+        const term = this.searchInput.value.trim();
 
         if (!term) {
             alert('Please enter a term to search for!');
             return;
         }
 
-        // Simulate a search operation (replace this with actual logic)
-        const resultContainer = this.resultContainer;
-        const termData = this.terms[term.toLowerCase()]; // Get term data
+        this.showLoading(true);
+        const termData = this.terms[term.toLowerCase()];
 
         if (termData) {
-            this.showLoading(false);
-            resultContainer.innerHTML = `<p>You searched for: <strong>${term}</strong></p>`;
-            resultContainer.style.display = 'block'; // Show the result container
+            this.resultContainer.style.display = 'block';
             document.getElementById('resultTitle').innerHTML = term;
             document.getElementById('resultContent').innerHTML = termData.definition;
         } else {
             alert('Term not found!');
         }
+
+        this.showLoading(false);
     }
 
     showLoading(show) {
         this.loadingElement.style.display = show ? 'block' : 'none';
-    }
-
-    hideResult() {
-        this.resultContainer.style.display = 'none'; // Hide the result container
     }
 }
 
