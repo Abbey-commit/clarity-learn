@@ -1,8 +1,11 @@
+// script.js
+import termsData from './terms.json' with { type: 'json' };
+
 class ClarityLearn {
     constructor() {
-        this.terms = {};
+        // Assign the imported data directly to the terms object
+        this.terms = termsData;
         this.init();
-        this.loadTerms();
     }
 
     init() {
@@ -12,22 +15,15 @@ class ClarityLearn {
         this.searchInput = document.getElementById('searchTerm');
 
         this.searchBtn.addEventListener('click', () => this.searchTerm());
-    }
 
-    loadTerms() {
-        this.terms = {
-            'smart contract': {
-                definition: 'A smart contract is like a digital vending machine....',
-            },
-            'proof of transfer': {
-                definition: 'Proof of Transfer (PoX) is Stacks\' unique way...',
-            },
-            // Add more terms as needed
-        };
+        // Add event listeners for your example cards
+        document.querySelectorAll('.example-card').forEach(card => {
+            card.addEventListener('click', (event) => this.quickSearch(event.target.textContent));
+        });
     }
 
     searchTerm() {
-        const term = this.searchInput.value.trim();
+        const term = this.searchInput.value.trim().toLowerCase();
 
         if (!term) {
             alert('Please enter a term to search for!');
@@ -35,13 +31,14 @@ class ClarityLearn {
         }
 
         this.showLoading(true);
-        const termData = this.terms[term.toLowerCase()];
+        const termData = this.terms[term];
 
         if (termData) {
             this.resultContainer.style.display = 'block';
-            document.getElementById('resultTitle').innerHTML = term;
+            document.getElementById('resultTitle').innerHTML = termData.title || term;
             document.getElementById('resultContent').innerHTML = termData.definition;
         } else {
+            document.getElementById('resultContainer').style.display = 'none';
             alert('Term not found!');
         }
 
@@ -50,6 +47,22 @@ class ClarityLearn {
 
     showLoading(show) {
         this.loadingElement.style.display = show ? 'block' : 'none';
+    }
+
+    // Function to handle the example cards
+    quickSearch(term) {
+        this.searchInput.value = term;
+        this.searchTerm();
+    }
+    
+    // Function for the Copy Link button (MVP)
+    copyLink() {
+        alert("Copy link functionality is not yet implemented in this MVP.");
+    }
+
+    // Function for the Suggest Improvement button (MVP)
+    suggestImprovement() {
+        alert("Thank you for your suggestion! We'll use this feedback to improve ClarityLearn's AI-powered explanations in the future.");
     }
 }
 
