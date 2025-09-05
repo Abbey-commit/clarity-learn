@@ -1,22 +1,20 @@
-// script.js
 import termsData from './terms.json' with { type: 'json' };
 
 class ClarityLearn {
     constructor() {
-        // Assign the imported data directly to the terms object
         this.terms = termsData;
         this.init();
     }
 
     init() {
+        // Corrected variable names to match HTML
         this.loadingElement = document.getElementById('loading');
         this.resultContainer = document.getElementById('resultContainer');
         this.searchBtn = document.getElementById('searchBtn');
         this.searchInput = document.getElementById('searchTerm');
 
+        // Add event listeners
         this.searchBtn.addEventListener('click', () => this.searchTerm());
-
-        // Add event listeners for your example cards
         document.querySelectorAll('.example-card').forEach(card => {
             card.addEventListener('click', (event) => this.quickSearch(event.target.textContent));
         });
@@ -31,11 +29,12 @@ class ClarityLearn {
         }
 
         this.showLoading(true);
+        // Corrected lookup to use the normalized term
         const termData = this.terms[term];
 
         if (termData) {
             this.resultContainer.style.display = 'block';
-            document.getElementById('resultTitle').innerHTML = termData.title || term;
+            document.getElementById('resultTitle').innerHTML = termData.title || term.replace(/(^\w|\s\w)/g, m => m.toUpperCase());
             document.getElementById('resultContent').innerHTML = termData.definition;
         } else {
             document.getElementById('resultContainer').style.display = 'none';
@@ -49,12 +48,11 @@ class ClarityLearn {
         this.loadingElement.style.display = show ? 'block' : 'none';
     }
 
-    // Function to handle the example cards
     quickSearch(term) {
         this.searchInput.value = term;
         this.searchTerm();
     }
-    
+
     // Function for the Copy Link button (MVP)
     copyLink() {
         alert("Copy link functionality is not yet implemented in this MVP.");
@@ -66,4 +64,5 @@ class ClarityLearn {
     }
 }
 
+// Ensure the class is instantiated to run the code
 const clarityLearn = new ClarityLearn();

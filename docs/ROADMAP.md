@@ -4,7 +4,7 @@
 ```markdown
 # ClarityLearn Roadmap
 
-## Phase 1: MVP ✅ (Current)
+## Phase 1: MVP (Current)
 - Basic web application with AI-powered term explanations
 - 20+ pre-loaded Stacks and Bitcoin terms
 - Simple, clean interface for easy learning
